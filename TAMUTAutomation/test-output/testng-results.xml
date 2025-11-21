@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-20T21:03:04 CST" name="TAMUT Automation Suite" finished-at="2025-11-20T21:07:16 CST" duration-ms="251872">
+    <groups>
+    </groups>
+    <test started-at="2025-11-20T21:03:04 CST" name="TAMUT Tests" finished-at="2025-11-20T21:07:16 CST" duration-ms="251872">
+      <class name="tests.TAMUTTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:03:04 CST" name="setUp" finished-at="2025-11-20T21:03:06 CST" duration-ms="1434" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase1_VisitUsViaAboutMenu()[pri:1, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:03:06 CST" name="testCase1_VisitUsViaAboutMenu" finished-at="2025-11-20T21:04:44 CST" duration-ms="97950" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase1_VisitUsViaAboutMenu -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:04:44 CST" name="tearDown" finished-at="2025-11-20T21:04:45 CST" duration-ms="1219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:04:45 CST" name="setUp" finished-at="2025-11-20T21:04:46 CST" duration-ms="632" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase2_SearchComputerScience()[pri:2, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:04:46 CST" name="testCase2_SearchComputerScience" finished-at="2025-11-20T21:05:19 CST" duration-ms="33795" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase2_SearchComputerScience -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:05:19 CST" name="tearDown" finished-at="2025-11-20T21:05:21 CST" duration-ms="1185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:05:21 CST" name="setUp" finished-at="2025-11-20T21:05:21 CST" duration-ms="665" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase3_CSFromAcademics()[pri:3, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:05:21 CST" name="testCase3_CSFromAcademics" finished-at="2025-11-20T21:06:45 CST" duration-ms="84181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase3_CSFromAcademics -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:06:45 CST" name="tearDown" finished-at="2025-11-20T21:06:47 CST" duration-ms="1191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:06:47 CST" name="setUp" finished-at="2025-11-20T21:06:47 CST" duration-ms="624" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase4_SearchWomen()[pri:4, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:06:47 CST" name="testCase4_SearchWomen" finished-at="2025-11-20T21:06:56 CST" duration-ms="8659" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase4_SearchWomen -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:06:56 CST" name="tearDown" finished-at="2025-11-20T21:06:57 CST" duration-ms="1169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:06:57 CST" name="setUp" finished-at="2025-11-20T21:06:58 CST" duration-ms="616" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase5_WomenViaAlumniMenu()[pri:5, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:06:58 CST" name="testCase5_WomenViaAlumniMenu" finished-at="2025-11-20T21:07:15 CST" duration-ms="17309" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase5_WomenViaAlumniMenu -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TAMUTTests@71d44a3]" started-at="2025-11-20T21:07:15 CST" name="tearDown" finished-at="2025-11-20T21:07:16 CST" duration-ms="1192" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.TAMUTTests -->
+    </test> <!-- TAMUT Tests -->
+  </suite> <!-- TAMUT Automation Suite -->
+</testng-results>

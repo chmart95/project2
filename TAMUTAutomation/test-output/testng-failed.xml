@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TAMUT Automation Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="TAMUT Tests(failed)">
+    <classes>
+      <class name="tests.TAMUTTests">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testCase4_SearchWomen"/>
+        </methods>
+      </class> <!-- tests.TAMUTTests -->
+    </classes>
+  </test> <!-- TAMUT Tests(failed) -->
+</suite> <!-- Failed suite [TAMUT Automation Suite] -->
