@@ -7,7 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testCase4_SearchWomen"/>
+          <include name="testCase5_WomenViaAlumniMenu"/>
         </methods>
       </class> <!-- tests.TAMUTTests -->
     </classes>

@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -11,13 +12,28 @@ import java.time.Duration;
 import java.util.List;
 
 public class WomenForTamutPage {
+	private JavascriptExecutor js;
     private WebDriver driver;
     private WebDriverWait wait;
 
     public WomenForTamutPage(WebDriver driver) {
+    	this.js = (JavascriptExecutor) driver;
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
         PageFactory.initElements(driver, this);
+    }
+    
+    public void scrollHalfwayDown() {
+        System.out.println("\nScrolling halfway down Women for A&M-Texarkana page...");
+        try {
+            
+            js.executeScript("window.scrollTo({ top: document.body.scrollHeight * 0.20, behavior: 'smooth' });");
+            Thread.sleep(1200);
+
+            Thread.sleep(800);
+        } catch (Exception e) {
+            System.out.println("⚠ Scroll on Women page had minor issue: " + e.getMessage());
+        }
     }
 
     public void verifyWomenPage() {
@@ -70,7 +86,7 @@ public class WomenForTamutPage {
                             return true;
                         }
                     } catch (Exception e) {
-                        // Element exists in DOM
+                        
                         System.out.println("✓ Found: " + elementName + " (exists in DOM)");
                         return true;
                     }

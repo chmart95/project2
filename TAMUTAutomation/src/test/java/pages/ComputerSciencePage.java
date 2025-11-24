@@ -20,7 +20,7 @@ public class ComputerSciencePage {
 
     public ComputerSciencePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
         this.js = (JavascriptExecutor) driver;
         this.visitUsPage = new VisitUsPage(driver);
         PageFactory.initElements(driver, this);
@@ -31,19 +31,16 @@ public class ComputerSciencePage {
         System.out.println("Current URL: " + driver.getCurrentUrl());
         System.out.println("Page Title: " + driver.getTitle());
         
-        // Wait for page to fully load
+        
         wait.until(driver -> js.executeScript("return document.readyState").equals("complete"));
         
         try {
-            Thread.sleep(1000); // Let page fully render
+            Thread.sleep(1000); 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         
-        // THE KEY INSIGHT: Accreditation and Faculty are BUTTONS in the header, not regular links!
-        // They appear in the top-right area of the page
-        
-        // 1. Look for "Accreditation" - it's a BUTTON or link in the header area
+
         boolean accreditationFound = findElement(new String[]{
             "//button[normalize-space()='Accreditation']",
             "//a[normalize-space()='Accreditation']",
@@ -95,7 +92,7 @@ public class ComputerSciencePage {
     public void clickVisitUsAndVerify() {
         System.out.println("Clicking Visit Us link on CS page");
         
-        // Add extra wait for button to be ready
+        
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -104,27 +101,33 @@ public class ComputerSciencePage {
         
         WebElement visitLink = null;
         String[] visitXpaths = {
+            "//a[@class='long-button-alt' and @href='../../visit/index.html']",
+            "//a[contains(@class, 'long-button-alt') and contains(@href, 'visit')]",
+            "//a[@href='../../visit/index.html']",
+            "//a[contains(@href, 'visit/index.html')]",
             "//a[contains(., 'Visit Us')]",
-            "//a[normalize-space()='Visit Us']",
-            "//a[contains(text(), 'Visit Us')]",
-            "//a[contains(@href, 'visit')]",
-            "//*[contains(text(), 'Visit Us') and (self::a or self::button)]",
-            "//a[@href='../../visit/index.html']"
+            "//a[contains(@href, 'visit')]"
         };
         
         for (String xpath : visitXpaths) {
             try {
                 List<WebElement> links = driver.findElements(By.xpath(xpath));
-                for (WebElement link : links) {
-                    // Make sure it's actually the Visit Us link, not some other element
-                    String text = link.getText().trim();
-                    if (text.contains("Visit Us") || text.equals("Visit Us")) {
-                        visitLink = link;
-                        System.out.println("Found Visit Us link with text: '" + text + "'");
-                        break;
+                if (!links.isEmpty()) {
+                    
+                    for (WebElement link : links) {
+                        String href = link.getAttribute("href");
+                        String className = link.getAttribute("class");
+                        
+                        
+                        if (href != null && href.contains("visit") && 
+                            className != null && className.contains("long-button-alt")) {
+                            visitLink = link;
+                            System.out.println("Found Visit Us link with href: " + href);
+                            break;
+                        }
                     }
+                    if (visitLink != null) break;
                 }
-                if (visitLink != null) break;
             } catch (Exception e) {
                 continue;
             }
@@ -167,19 +170,18 @@ public class ComputerSciencePage {
     }
 
     private boolean findElement(String[] xpaths, String elementName) {
-        // Try to find element anywhere on the page
+        
         for (String xpath : xpaths) {
             try {
                 List<WebElement> elements = driver.findElements(By.xpath(xpath));
                 
-                // For Visit Us, there might be multiple elements with that text
-                // We need to find the actual clickable link/button
+
                 for (WebElement element : elements) {
                     try {
-                        // Check if element is displayed and has the right text
+                        
                         if (element.isDisplayed()) {
                             String elementText = element.getText().trim();
-                            // Make sure it's actually the element we're looking for
+                            
                             if (elementText.contains(elementName) || 
                                 elementText.equals(elementName) ||
                                 elementName.equals("Visit Us")) { // Special case for Visit Us
@@ -188,8 +190,7 @@ public class ComputerSciencePage {
                             }
                         }
                     } catch (Exception e) {
-                        // Element might be there but with special styling
-                        // Check if it has text content
+
                         String text = null;
                         try {
                             text = element.getText();
@@ -203,7 +204,6 @@ public class ComputerSciencePage {
                             return true;
                         }
                         
-                        // Check via JavaScript if element exists and has content
                         try {
                             String jsText = (String) js.executeScript(
                                 "return arguments[0].textContent.trim();", element);

@@ -26,15 +26,16 @@ public class BaseTest {
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); 
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); 
     }
 
     @AfterMethod
     public void tearDown() {
         if (driver != null) {
             try {
-                Thread.sleep(1000); // Brief pause to see final state
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

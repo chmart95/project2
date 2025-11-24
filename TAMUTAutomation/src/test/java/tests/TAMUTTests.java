@@ -31,7 +31,7 @@ public class TAMUTTests extends BaseTest {
 
     @Test(priority = 3)
     public void testCase3_CSFromAcademics() {
-        System.out.println("\n========== TEST CASE 3: CS from Academics Menu ==========");
+        System.out.println("\n========== TEST CASE 3: Computer Science via Academics Page ==========");
         HomePage home = new HomePage(driver);
         home.open();
         home.openAcademicsAndClickComputerScienceLearnMore();
@@ -50,16 +50,21 @@ public class TAMUTTests extends BaseTest {
         home.clickFirstSearchResultContaining("Women");
         WomenForTamutPage women = new WomenForTamutPage(driver);
         women.verifyWomenPage();
+        women.scrollHalfwayDown();
         System.out.println("========== TEST CASE 4 COMPLETED ==========\n");
     }
 
     @Test(priority = 5)
-    public void testCase5_WomenViaAlumniMenu() {
-        System.out.println("\n========== TEST CASE 5: Women via Alumni Menu ==========");
+    public void testCase5_WomenViaAlumniSidebar() {
+        System.out.println("\n========== TEST CASE 5: Alumni & Friends → Sidebar → Women Page ==========");
         HomePage home = new HomePage(driver);
         home.open();
-        WomenForTamutPage women = home.goToWomenViaAlumniMenu();
+
+        WomenForTamutPage women = home.goToWomenViaAlumniSidebar();
         women.verifyWomenPage();
+
+        women.scrollHalfwayDown();
+
         System.out.println("========== TEST CASE 5 COMPLETED ==========\n");
     }
 }
